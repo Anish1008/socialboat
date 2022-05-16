@@ -107,3 +107,13 @@ span{
   font-size: large;
   font-weight: 700;
 }
+.filter{
+  text-align: center;
+}
+.Uniquetags{
+  display: flex;
+  justify-content: space-around;
+}
+.Uniquetags>div{
+  cursor: pointer;
+}
