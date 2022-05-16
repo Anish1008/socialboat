@@ -1,38 +1,109 @@
-.App {
+*{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+body{
+  background-color: #aca4a4;
+}
+.head{
+    
+  background-color:gray;
+  height: 7vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3,auto);
+  
+}
+.logo{
+  display:flex;
+  justify-content: left;
+}
+.logo-img{
+  display:flex;
+  position: relative;
+  height: 5vh;
+  margin: 1vh;
+  margin-left: 3vh ;
+  justify-content: center;
+  align-items: center;
+}
+.prop{
+  display:flex;
+  justify-content: right;
+}
+.prop-img{
+  display:flex;
+  position: relative;
+  height: 5vh;
+  margin: 1vh;
+  margin-right: 3vh;
+  justify-content: center;
+  align-items: center;
+}
+.search{
+  display:flex;
+  justify-content:center;
+  align-items: center;
+}
+
+.button{
+  margin-left: 1vh;
+  border-radius: 4px;
+  border: 2px solid black;
+  background-color:#04AA6D;
+  height: 4vh;
+  width: 17vw;
+  padding: 4px;
+  /* font-size: 0.8rem; */
+}
+
+.input{
+  border-radius: 4px;
+  height: 4vh;
+  width:30vw;
+}
+.cardHolder{
+  /* border: 1px solid black; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+h3{
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.card{
+  margin: 10px;
+  width: 300px;
+  border: 2px solid black;
+  box-shadow: 0px 10px 10px 0px rgb(57, 56, 56);
+  border-radius: 10px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.video-box{
+  height: 130px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+video{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.tags{
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  background-color: #04AA6D;
+  height: 60px;
+  border-radius: 0px 0px 10px 10px;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+span{
+  margin: 0 2px;
+}p{
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: large;
+  font-weight: 700;
 }
