@@ -39,6 +39,7 @@ let unique =[]
       tagArray.push(res)
       return res
     })
+    return data
   })
   tagArray.sort()
   tagArray.map((data)=>{
@@ -46,7 +47,7 @@ let unique =[]
       unique.push(data)
       temp=data;
     }
-    return res
+    return data
   })
   setUniqueTags(unique)
   setDebounced(true)
