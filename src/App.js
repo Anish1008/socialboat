@@ -6,7 +6,7 @@ export default function App() {
   let cnt=0,cntr=0,c="",co="";
   const [text, setText] = useState("");
   const [results, setResults] = useState([]);
-  const [timer,setTimer]= useState()
+  const [debounced,setDebounced] = useState(false);
   function handleChange(e) {
     // setTimer(setTimeout(()=>{
     //   setText(e.target.value);
@@ -19,7 +19,7 @@ export default function App() {
   const [uniqueTags,setUniqueTags] = useState([])
   useEffect(() => {
     let timer = setTimeout(()=>{
-      
+      setSelected("")
       var data = new FormData();
       var numResults = 100;
       var config = {
@@ -37,6 +37,7 @@ let unique =[]
   response.data.results.map((data)=>{
     data.tags.map((res)=>{
       tagArray.push(res)
+      return null
     })
   })
   tagArray.sort()
@@ -45,8 +46,10 @@ let unique =[]
       unique.push(data)
       temp=data;
     }
+    return null
   })
   setUniqueTags(unique)
+  setDebounced(true)
             setResults(response.data.results);
             console.log(response.data.results);
           })
@@ -77,16 +80,15 @@ let unique =[]
         </div>
     </div>
       <div>
-          <h2 className="filter">Filter by Tags</h2>
-        <div className="Uniquetags">
-        {
-          uniqueTags.map((data)=>{
-          return<div onClick={()=>setSelected(data)}>{data}</div>
-          })
-        }
-        </div>
-      {text ? (
+      {(text && debounced) ? (
         <>
+        <h2 className="filter">Filter by Tags</h2>
+        <div className="Uniquetags">
+      
+          {uniqueTags.map((data)=>{
+          return<div onClick={()=>setSelected(data)}>{data}</div>
+          })}
+        </div>
         <div className="cardHolder">
         {  selected ? (
         results.map((res) => {
